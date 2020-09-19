@@ -1,4 +1,4 @@
-#define PIN_LED 13
+#define PIN_LED 7
 unsigned int count, toggle;
 
 //LED turns on for 1 second
@@ -13,17 +13,17 @@ void setup()
   }
   Serial.println("Hello World!");
   count=toggle=0;
-  digitalWrite(PIN_LED, 1);
+  digitalWrite(PIN_LED, 0);
   delay(1000);//turn on LED for 1 second
 }
 
 void loop()
 {
   Serial.println(++count);
-  if(count==12){while(1){digitalWrite(PIN_LED,0);}}
+  if(count==12){while(1){digitalWrite(PIN_LED,1);}}
   //After LED turns on/off for 5 times, turn off LED
   toggle=toggle_state(toggle);//toggle LED value
-  digitalWrite(PIN_LED, toggle); //update LED status
+  digitalWrite(PIN_LEDa, toggle); //update LED status
   delay(100); //wait for 100 milliseconds
 }
 
