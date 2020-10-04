@@ -23,7 +23,7 @@ void loop()
   if(count==12){while(1){digitalWrite(PIN_LED,1);}}
   //After LED turns on/off for 5 times, turn off LED
   toggle=toggle_state(toggle);//toggle LED value
-  digitalWrite(PIN_LEDa, toggle); //update LED status
+  digitalWrite(PIN_LED, toggle); //update LED status
   delay(100); //wait for 100 milliseconds
 }
 
