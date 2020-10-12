@@ -13,7 +13,7 @@
 #define _DIST_MIN 100 // minimum distance to be measured (unit: mm)
 #define _DIST_MAX 400 // maximum distance to be measured (unit: mm)
 
-#define _DUTY_MIN 653 // servo full clockwise position (0 degree)
+#define _DUTY_MIN 553 // servo full clockwise position (0 degree)
 #define _DUTY_NEU 1471 // servo neutral position (90 degree)
 #define _DUTY_MAX 2399 // servo full counterclockwise position (180 degree)
 #define _DUTY_TEN 656 // (10 degree)
@@ -86,11 +86,11 @@ if(dist_ema < 180.0) {
      if(dist_ema < 190.0)
      {
         dist = dist_ema - 180.0;
-        degree = _DUTY_MIN + (0.3 * dist);
+        degree = _DUTY_MIN + (10.3 * dist);
      }
      else if (dist_ema < 270.0)
      {
-        dist = dist_ema - 180.0;
+        dist = dist_ema - 190.0;
         //degree = dist * 16.4;
         degree = _DUTY_TEN + (dist * 10.1);
      }
@@ -108,7 +108,7 @@ if(dist_ema < 180.0) {
   }
   else {
     digitalWrite(PIN_LED, 1);
-    //myservo.writeMicroseconds(_DUTY_MAX);
+    myservo.writeMicroseconds(_DUTY_MAX);
   }
    
 // update last sampling time

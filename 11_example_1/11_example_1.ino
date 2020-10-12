@@ -12,9 +12,9 @@
 #define _DIST_MIN 100 // minimum distance to be measured (unit: mm)
 #define _DIST_MAX 300 // maximum distance to be measured (unit: mm)
 
-#define _DUTY_MIN 653 // servo full clockwise position (0 degree)
+#define _DUTY_MIN 553 // servo full clockwise position (0 degree)
 #define _DUTY_NEU 1471 // servo neutral position (90 degree)
-#define _DUTY_MAX 2296 // servo full counterclockwise position (180 degree)
+#define _DUTY_MAX 2399 // servo full counterclockwise position (180 degree)
 
 // global variables
 float timeout; // unit: us
