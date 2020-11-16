@@ -5,7 +5,7 @@ Servo myservo;
 
 unsigned long time1, time2, time3;
 //int degree[4] = {0, 90, 180, 90};
-int degree[2] = {0, 180};
+int degree[2] = {0, 30};
 int num = 0;
 
 void setup() {
@@ -18,9 +18,9 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   
-  num = (num+1)%2;
+ // num = 0;
   //time1=millis();
-  myservo.write(degree[num]);
+  myservo.write(30);
   
   /*
   time1=micros();
