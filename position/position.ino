@@ -56,7 +56,7 @@ void setup() {
   //a = 70;
   //b = 300;
   a = -20;
-  b = 150;
+  b = 400;
   last_sampling_time = 0;
   //duty_chg_per_interval = (_DUTY_HIGH - _DUTY_LOW)*(_SERVO_SPEED / (_SERVO_ANGLE*2))*(_INTERVAL_SERVO/1000.0);
 }
@@ -75,18 +75,23 @@ void loop() {
   if(millis() < last_sampling_time + INTERVAL ) return ;
   float raw_dist = ir_distance();
   float dist_cali = 100 + 300.0 / (b-a)*(raw_dist - a);
+  /*
   Serial.print("min:0,max:500,dist:");
   Serial.print(raw_dist);
-    Serial.print("min:-100,max:500,volt:");
+    Serial.print("min:-100,max:500,raw:");
   Serial.print(volt);
   Serial.print(",dist_cali;");
   Serial.println(dist_cali);
-
+  */
+  //raw_dist = float(analogRead(PIN_IR));
+  Serial.print("min:0,max:500,dist:");
+  Serial.println(raw_dist);
+/*
   if(dist_cali < 255)
     myservo.writeMicroseconds(_DUTY_LOW);
   else
     myservo.writeMicroseconds(_DUTY_HIGH);
-    
+ */   
   last_sampling_time += INTERVAL;
   
 }
